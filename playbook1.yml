@@ -1,0 +1,23 @@
+#simple ansible playbook
+-
+  name: play 1
+  hosts: localhost
+  tasks:
+    - name: execute command 'date'
+      command: date
+
+    - name: execute script
+      script: script.sh
+-
+  name: play 2
+  hosts: localhost
+  tasks:
+    - name: install httpd
+      yum:
+        name: httpd
+        state: present
+
+    - name: start web server
+      service:
+        name: httpd
+        state: started

@@ -1,0 +1,12 @@
+- name: demo
+  hosts: localhost
+  gather_facts: false
+  vars:
+    list_loop: [1, 2, 3]
+  tasks:
+    - name: Ping_endpoint
+      ping:
+        data: test
+      cli_config:
+        config: "{{ lookup('t1, 't2) }}"
+  
